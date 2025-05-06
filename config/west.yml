@@ -13,7 +13,7 @@ manifest:
       url: https://github.com/a741725193/zmk-sofle
       revision: refactor
     - name: nice-view-dbz
-      remote: gpeye
+      remote: JimmyBlackley
       revision: main 
     - name: zmk
       remote: zmkfirmware
