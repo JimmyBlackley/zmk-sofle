@@ -6,13 +6,13 @@ manifest:
       # See:
       # - https://zmk.dev/docs/features/modules
       # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
-    - name: gpeye
-      url-base: https://github.com/GPeye
+    - name: JimmyBlackley
+      url-base: https://github.com/JimmyBlackley
   projects:
     - name: eyelash_sofle
       url: https://github.com/a741725193/zmk-sofle
       revision: refactor
-    - name: mario-peripheral-animation
+    - name: nice-view-dbz
       remote: gpeye
       revision: main 
     - name: zmk
