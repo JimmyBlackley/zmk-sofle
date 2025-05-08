@@ -49,7 +49,7 @@
 &none               &kp LEFT_ALT        &kp LEFT_SHIFT  &kp LEFT_GUI &kp SPACE     &mo 1        &mo 2       &kp ENTER  &kp RSHIFT &kp RIGHT_ALT    &kp RIGHT_SHIFT  &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_Ugit P C_VOL_DN>;
             display-name = "HOME";
         };
 
