@@ -127,7 +127,7 @@ layers:
   - LOWER
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-command$$
+  - RIGHT GUI
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
   LOWER:
