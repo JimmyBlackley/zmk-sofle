@@ -60,9 +60,9 @@ layers:
   - $$mdi:keyboard-space$$
   - UPPER
   - LOWER
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-command$$
+  - RIGHT GUI
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
   UPPER:
