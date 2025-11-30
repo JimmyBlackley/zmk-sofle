@@ -9,6 +9,9 @@ manifest:
     - name: JimmyBlackley
       url-base: https://github.com/JimmyBlackley
   projects:
+   # - name: mario-peripheral-animation
+   #   remote: gpeye
+   #    revision: main 
     - name: eyelash_sofle
       url: https://github.com/a741725193/zmk-sofle
       revision: refactor
@@ -17,7 +20,7 @@ manifest:
       revision: main 
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3.0
       import: app/west.yml
   self:
-    path: config
+    path: boards
