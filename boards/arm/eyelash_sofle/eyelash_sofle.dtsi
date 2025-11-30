@@ -37,11 +37,6 @@
 		status = "disabled";
 	};
 
-    sensors {
-		compatible = "zmk,keymap-sensors";
-		sensors = <&left_encoder>;
-	};
-
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
