@@ -59,7 +59,7 @@
 &trans      &kp GRAVE        &kp F11         &kp F12          &none            &none              &none             &kp PG_UP        &kp END          &kp UP        &kp HOME        &kp MINUS         &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &none              &none             &kp PG_DN        &kp LEFT         &kp DOWN      &kp RIGHT       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &none             &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT    &none           &none             &trans
-&none       &kp LEFT_ALT     &kp LEFT_SHIFT  &kp LEFT_GUI     &kp SPACE        &mo 1              &mo 2             &kp ENTER        &kp RSHIFT       &kp LEFT_GUI  &kp RIGHT_SHIFT &kp DELETE
+&none       &trans           &trans          &trans           &kp SPACE        &mo 1              &mo 2             &kp ENTER        &trans           &trans        &trans          &kp DELETE
             >;
 
             display-name = "UPPER";
