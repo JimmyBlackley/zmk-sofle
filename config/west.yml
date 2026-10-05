@@ -1,23 +1,24 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-      # Additional modules containing boards/shields/custom code can be listed here as well.
-      # See:
-      # - https://zmk.dev/docs/features/modules
-      # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
+    - name: cormoran
+      url-base: https://github.com/cormoran
     - name: JimmyBlackley
       url-base: https://github.com/JimmyBlackley
   projects:
-   # - name: mario-peripheral-animation
-   #   remote: gpeye
-   #    revision: main 
     - name: nice-view-dbz
       remote: JimmyBlackley
-      revision: main 
+      revision: 698b8ee338a9f8c765d0d2da2356b6cb95ce1521
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      # Upstream's v0.3-branch+dya, pinned to the version validated here.
+      revision: 4493783ef88ce2e653bf8217c92ee17140df71e3
       import: app/west.yml
+    - name: zmk-module-ble-management
+      remote: cormoran
+      # zmk-v0.3.0.0
+      revision: 851661cd21f2aded8ec649da86e01a207dc4b973
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291
   self:
-    path: boards
+    path: config

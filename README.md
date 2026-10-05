@@ -44,5 +44,39 @@ normal arrows and Insert; the HOME comma is unchanged.
 The four arrow shortcuts match `~/.config/nix/dotfiles/rectangle/RectangleConfig.json`.
 Center Half uses `centerHalf` with key code `43` and modifier flags `786432`
 (Control + Option). Import the updated JSON in Rectangle's settings, or apply
-the Nix configuration and restart Rectangle. Build and flash the updated left
-firmware to use the new keyboard bindings.
+the Nix configuration and restart Rectangle. Flash the updated firmware to use
+the new keyboard bindings.
+
+## Firmware and Studio
+
+This configuration merges upstream `cad1477` and targets the basic Sofle without
+encoders, dials, or pointing devices. It uses the `nice_nano_v2` board with local
+`eyelash_sofle_left` and `eyelash_sofle_right` shields. The right display keeps
+the custom nice-view-dbz module. Firmware and module versions are pinned in
+`config/west.yml`.
+
+The left firmware supports ZMK Studio and DYA Studio over USB. DYA adds controls
+for Bluetooth profiles and sleep/idle settings; settings changes also reach the
+right half. Encoder remapping, pointing processors, and battery-history modules
+are omitted for this hardware.
+
+1. Build both halves using the **Build ZMK firmware** GitHub Actions workflow,
+   or use the validated local UF2 files.
+2. Double-tap each half's reset button to enter its UF2 bootloader. Copy
+   `eyelash_sofle_studio_left.uf2` to the left half and
+   `eyelash_sofle_right.uf2` to the right half.
+3. Connect the left half by USB and open https://zmk.studio/ or
+   https://studio.dya.cormoran.works/ in Chrome/Edge. Select the Sofle's USB
+   serial port. Studio locking is disabled in this build.
+4. If the keyboard output is set to Bluetooth, hold **LOWER + A** to select
+   USB output before connecting Studio. USB Studio uses the active USB output.
+
+Earlier firmware may expose two serial ports: the console port does not answer
+Studio requests. During the local connection check, the installed firmware
+answered Studio on `/dev/cu.usbmodem211304`, while `211301` was the other port.
+This new build exposes only the Studio serial port.
+
+If you previously saved a keymap using Studio, **Restore Stock Settings** loads
+the compiled keymap after flashing and replaces those saved mappings. Ordinary
+key assignments can then be edited and saved through Studio without flashing;
+adding new behavior definitions still requires rebuilding firmware.
