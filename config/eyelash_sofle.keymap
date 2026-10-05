@@ -6,6 +6,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/modifiers.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -16,6 +17,47 @@
 / {
 
     behaviors {
+        // On UPPER, Ctrl + arrows/comma sends Rectangle's Ctrl + Option shortcuts.
+        // Keeping Ctrl makes this work whichever modifier key is pressed first.
+        rect_up: rectangle_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UP>, <&kp LA(UP)>;
+            mods = <MOD_LCTL>;
+            keep-mods = <MOD_LCTL>;
+        };
+
+        rect_down: rectangle_down {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&kp LA(DOWN)>;
+            mods = <MOD_LCTL>;
+            keep-mods = <MOD_LCTL>;
+        };
+
+        rect_left: rectangle_left {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp LA(LEFT)>;
+            mods = <MOD_LCTL>;
+            keep-mods = <MOD_LCTL>;
+        };
+
+        rect_right: rectangle_right {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp LA(RIGHT)>;
+            mods = <MOD_LCTL>;
+            keep-mods = <MOD_LCTL>;
+        };
+
+        rect_center: rectangle_center_half {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp INSERT>, <&kp LA(COMMA)>;
+            mods = <MOD_LCTL>;
+            keep-mods = <MOD_LCTL>;
+        };
     };
 
     combos {
@@ -45,9 +87,9 @@
         layer_1 {
             bindings = <
 &kp GRAVE           &kp F1           &kp F2                 &kp F3           &kp F4           &kp F5             &none             &kp F6           &kp F7           &kp F8        &kp F9          &kp F12           &kp BACKSPACE 
-&trans              &kp GRAVE        &kp F11                &kp F12          &none            &none              &none             &kp PG_UP        &kp END          &kp UP        &kp HOME        &kp MINUS         &kp EQUAL
-&trans              &kp TILDE        &trans                 &trans           &trans           &none              &none             &kp PG_DN        &kp LEFT         &kp DOWN      &kp RIGHT       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp LEFT_CONTROL    &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &none             &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT    &none           &none             &trans
+&trans              &kp GRAVE        &kp F11                &kp F12          &none            &none              &none             &kp PG_UP        &kp END          &rect_up      &kp HOME        &kp MINUS         &kp EQUAL
+&trans              &kp TILDE        &trans                 &trans           &trans           &none              &none             &kp PG_DN        &rect_left       &rect_down    &rect_right     &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp LEFT_CONTROL    &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &none             &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rect_center  &none           &none             &trans
 &none               &kp LEFT_ALT     &kp LEFT_CONTROL       &kp LEFT_GUI     &kp SPACE        &mo 1              &mo 2             &mo 2            &kp RSHIFT       &kp RIGHT_GUI &kp RIGHT_SHIFT &kp DELETE
             >;
 

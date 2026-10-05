@@ -117,6 +117,22 @@ parse_config:
     type: trans
 
   raw_binding_map:
+    # UPPER + Ctrl Rectangle shortcuts (plain taps retain navigation/Insert).
+    "&rect_up":
+      tap: $$mdi:arrow-up-bold$$
+      hold: "⌃⌥↑"
+    "&rect_down":
+      tap: $$mdi:arrow-down-bold$$
+      hold: "⌃⌥↓"
+    "&rect_left":
+      tap: $$mdi:arrow-left-bold$$
+      hold: "⌃⌥←"
+    "&rect_right":
+      tap: $$mdi:arrow-right-bold$$
+      hold: "⌃⌥→"
+    "&rect_center":
+      tap: Ins
+      hold: "⌃⌥,"
     # Layers
     "&ltq 1 BACKSPACE":
       tap:  $$mdi:backspace$$

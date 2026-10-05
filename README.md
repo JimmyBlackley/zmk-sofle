@@ -26,3 +26,23 @@ For 3D printed model files or any issues and malfunctions with the keyboard, ple
 
 ![Sofle键位图](keymap-drawer/eyelash_sofle.svg)
 
+## Rectangle shortcuts
+
+Hold **UPPER** and **left Ctrl** (the key beside Z), then press:
+
+| Physical key | UPPER key | Rectangle action | Sent shortcut |
+| --- | --- | --- | --- |
+| I | Up | Top Half | Control + Option + Up |
+| K | Down | Bottom Half | Control + Option + Down |
+| J | Left | Left Half | Control + Option + Left |
+| L | Right | Right Half | Control + Option + Right |
+| , (below K) | Insert | Center Half | Control + Option + , |
+
+UPPER and Ctrl can be held in either order. Without Ctrl, UPPER keeps its
+normal arrows and Insert; the HOME comma is unchanged.
+
+The four arrow shortcuts match `~/.config/nix/dotfiles/rectangle/RectangleConfig.json`.
+Center Half uses `centerHalf` with key code `43` and modifier flags `786432`
+(Control + Option). Import the updated JSON in Rectangle's settings, or apply
+the Nix configuration and restart Rectangle. Build and flash the updated left
+firmware to use the new keyboard bindings.
